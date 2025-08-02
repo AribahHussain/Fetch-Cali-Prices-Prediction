@@ -1,0 +1,73 @@
+California Housing Price Prediction 
+1. Objective
+The aim of this project is to develop a machine learning model to predict median house values in California using features such as median income, average number of rooms, population, and geographic location. This project uses the fetch_california_housing dataset provided by Scikit-learn.
+
+2. Dataset Overview
+Source: sklearn.datasets.fetch_california_housing
+
+Number of Instances: 20,640
+
+Number of Features: 8 numerical predictors + 1 target variable (MedHouseVal)
+
+Target Variable: Median house value (in hundreds of thousands USD)
+
+Selected Features for Model:
+
+MedInc: Median income in the block group
+
+AveRooms: Average number of rooms per household
+
+Population: Block group population
+
+Latitude: Geographic coordinate (North–South)
+
+Longitude: Geographic coordinate (East–West)
+
+3. Data Preparation
+Loading the Dataset – Used fetch_california_housing(as_frame=True) to load data into a Pandas DataFrame.
+
+Feature Selection – Chose relevant features to balance accuracy and model simplicity.
+
+Data Splitting – Divided into training (80%) and testing (20%) sets.
+
+Scaling – Standardized features using StandardScaler to ensure better model performance.
+
+4. Model Development
+Algorithm Used: Linear Regression
+
+Reason for Choice: Interpretable, quick to train, and effective for continuous numerical targets.
+
+5. Training & Prediction
+Trained the model on scaled training data.
+
+Generated predictions for the test set.
+
+6. Model Evaluation
+Mean Squared Error (MSE): Measures average squared difference between predictions and actual values.
+
+Root Mean Squared Error (RMSE): Shows error magnitude in the same unit as the target variable.
+
+R² Score: Indicates the proportion of variance in the target explained by the model.
+
+Sample Results:
+
+RMSE: ~0.72
+
+R²: ~0.60
+
+7. Visualization
+Scatter Plot: Displays actual vs predicted house prices, with a diagonal reference line for perfect predictions.
+
+Data Display: Shows top predicted vs actual values for inspection.
+
+8. Conclusion
+The Linear Regression model achieved an R² score of ~0.60, meaning it explains around 60% of the variance in California house prices based on selected features. While results are decent, accuracy can be improved using more complex models such as RandomForestRegressor, Gradient Boosting, or Neural Networks.
+
+9. Future Improvements
+Add all 8 features from the dataset.
+
+Use feature importance ranking for selection.
+
+Implement ensemble models for higher accuracy.
+
+Perform hyperparameter tuning with GridSearchCV or RandomizedSearchCV.
